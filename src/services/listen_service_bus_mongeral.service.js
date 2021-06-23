@@ -2,6 +2,7 @@
 
 const {delay, ServiceBusClient} = require("@azure/service-bus");
 const {EventsMagRepository} = require("../repositories/EventsMagRepository");
+const {LogUtils} = require("../utils/LogUtils");
 
 // connection string to your Service Bus namespace
 const connectionString = "Endpoint=sb://mongeral-develop.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=hHsfkQ2Qtv7c2+fntOiXlPr3B2/av0+TXI2DM1U2Kys="
@@ -18,12 +19,13 @@ exports.ListenServiceBusMongeral = async function () {
 
   // function to handle messages
   const statusProposalMessageHandler = async (messageReceived) => {
+    LogUtils.logInfo("Mensagem recebida do service bus", messageReceived)
     await proccessMessage(messageReceived);
   };
 
   // function to handle any errors
   const statusProposalErrorHandler = async (error) => {
-    console.log(error);
+    LogUtils.logError(error)
   };
 
   // subscribe and specify the message and error handlers

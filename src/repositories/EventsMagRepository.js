@@ -1,5 +1,6 @@
 "use strict";
 
+
 const AWS = require('aws-sdk');
 const SESConfig = {
   apiVersion: "2010-12-01",
@@ -8,6 +9,7 @@ const SESConfig = {
   region: "ca-central-1"
 }
 AWS.config.update(SESConfig);
+const {LogUtils} = require("../utils/LogUtils");
 
 class EventsMagRepository {
 
@@ -25,11 +27,10 @@ class EventsMagRepository {
     publishTextPromise.then(
       function (data) {
         console.log("--------------------------------------------------------------");
-        console.log(`Message ${params.Message} sent to the topic ${params.TopicArn}`);
-        console.log("MessageID is " + data.MessageId);
+        LogUtils.logInfo(`Message ${params.Message} sent to the topic ${params.TopicArn}`, data);
       }).catch(
       function (err) {
-        console.error(err, err.stack);
+        LogUtils.logError(err);
       });
   }
 

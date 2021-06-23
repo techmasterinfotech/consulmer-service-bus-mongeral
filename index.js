@@ -6,6 +6,8 @@ async function main() {
 
 // call the main function
 main().catch((err) => {
-  console.log("Error occurred: ", err);
+  console.error("Error occurred: ", err);
   process.exit(1);
+}).then(() => {
+  console.log("Start Listener Service Bus MAG");
 });
