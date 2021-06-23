@@ -131,3 +131,7 @@ $RECYCLE.BIN/
 
 # User-specific stuff
 .idea
+
+# ------------------------------------- IDE ------------------------------------- //
+
+package-lock.json

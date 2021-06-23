@@ -1,0 +1,16 @@
+{
+  "name": "consulmer-service-bus-mongeral",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Everton Teotonio",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/service-bus": "^7.2.0",
+    "aws-sdk": "^2.931.0"
+  }
+}
