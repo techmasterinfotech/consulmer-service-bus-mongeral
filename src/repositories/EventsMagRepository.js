@@ -18,7 +18,7 @@ class EventsMagRepository {
     var params = {
       Message: JSON.stringify(message.body), /* required */
       TopicArn: 'arn:aws:sns:ca-central-1:288077811749:dev_MAG_INTEGRATION.fifo',
-      MessageGroupId: message.body.Namespace,
+      MessageGroupId: message.body.Namespace
     };
 
     // Create promise and SNS service object
