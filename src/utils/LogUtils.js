@@ -5,7 +5,7 @@ class LogUtils {
     console.info(`${message}`);
     if (typeof json === "object") {
       console.info("############");
-      console.info(JSON.stringify(json));
+      console.info(json);
       console.info("############");
     }
     console.info("---------------------------------------------------------------------");
@@ -16,7 +16,7 @@ class LogUtils {
     console.warn(`${message}`);
     if (typeof json === "object") {
       console.warn("############");
-      console.warn(JSON.stringify(json));
+      console.warn(json);
       console.warn("############");
     }
     console.warn("---------------------------------------------------------------------");

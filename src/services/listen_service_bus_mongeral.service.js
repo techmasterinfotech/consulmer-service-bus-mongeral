@@ -19,13 +19,13 @@ exports.ListenServiceBusMongeral = async function () {
 
   // function to handle messages
   const statusProposalMessageHandler = async (messageReceived) => {
-    LogUtils.logInfo("Mensagem recebida do service bus", messageReceived)
     await proccessMessage(messageReceived);
   };
 
   // function to handle any errors
   const statusProposalErrorHandler = async (error) => {
     LogUtils.logError(error)
+    throw error;
   };
 
   // subscribe and specify the message and error handlers

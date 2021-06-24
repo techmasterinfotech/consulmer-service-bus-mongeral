@@ -17,7 +17,7 @@ class EventsMagRepository {
 
     var params = {
       Message: JSON.stringify(message.body), /* required */
-      TopicArn: 'arn:aws:sns:ca-central-1:288077811749:status_proposal.fifo',
+      TopicArn: 'arn:aws:sns:ca-central-1:288077811749:dev_MAG_INTEGRATION.fifo',
       MessageGroupId: message.body.Namespace,
     };
 
@@ -26,7 +26,6 @@ class EventsMagRepository {
 
     publishTextPromise.then(
       function (data) {
-        console.log("--------------------------------------------------------------");
         LogUtils.logInfo(`Message ${params.Message} sent to the topic ${params.TopicArn}`, data);
       }).catch(
       function (err) {
