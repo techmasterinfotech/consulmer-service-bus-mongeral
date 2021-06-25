@@ -1,7 +1,7 @@
 {
   "name": "consulmer-service-bus-mongeral",
   "version": "1.0.0",
-  "description": "",
+  "description": "Serviço que faz consumo do ServiceBus da MAG",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

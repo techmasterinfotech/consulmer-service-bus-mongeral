@@ -5,6 +5,10 @@ FROM node:14
 # Create app directory
 WORKDIR /usr/src/consulmer-service-bus-mongeral
 
+
+ENV AWS_ACCESS_KEY_ID=AKIAUGEWGSASQJHBCYOD
+ENV AWS_SECRET_ACCESS_KEY=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
+
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
@@ -17,5 +21,4 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD [ "node", "index.js" ]
